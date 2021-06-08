@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "Product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "text"
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "inStock": {
+      "type": "boolean"
+    },
+    "type": {
+      "via": "products",
+      "model": "type"
+    },
+    "genders": {
+      "collection": "gender"
+    },
+    "colours": {
+      "collection": "colour"
+    },
+    "colour": {
+      "model": "colour"
+    },
+    "isPrint": {
+      "type": "boolean"
+    },
+    "detailsCare": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list"
+    },
+    "category": {
+      "model": "category",
+      "via": "products"
+    },
+    "navigations": {
+      "collection": "navigation",
+      "via": "products",
+      "dominant": true
+    },
+    "sizes": {
+      "collection": "size"
+    },
+    "sizeFit": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list"
+    }
+  }
+}

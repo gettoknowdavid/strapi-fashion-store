@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/women/:category/:slug",
+      "handler": "women.findByCategory",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/women/:category/:slug/:type/:slug",
+      "handler": "women.findByType",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/women/:category/:slug/:product/:slug",
+      "handler": "women.findByProduct",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

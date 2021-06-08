@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "types",
+  "info": {
+    "name": "Type",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "genders": {
+      "collection": "gender",
+      "via": "types",
+      "dominant": true
+    },
+    "category": {
+      "model": "category",
+      "via": "types"
+    },
+    "products": {
+      "via": "type",
+      "collection": "product"
+    }
+  }
+}

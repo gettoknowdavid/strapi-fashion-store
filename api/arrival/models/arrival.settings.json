@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "arrivals",
+  "info": {
+    "name": "Arrival",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "products": {
+      "collection": "product"
+    },
+    "gender": {
+      "model": "gender"
+    }
+  }
+}

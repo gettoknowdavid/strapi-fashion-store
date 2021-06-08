@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headers",
+  "info": {
+    "name": "Header",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.category"
+    },
+    "newArrival": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.new-arrival"
+    },
+    "collections": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.collections"
+    }
+  }
+}

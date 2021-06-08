@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navigations",
+  "info": {
+    "name": "Navigation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "arrival": {
+      "model": "arrival"
+    },
+    "gender": {
+      "model": "gender"
+    },
+    "products": {
+      "via": "navigations",
+      "collection": "product"
+    }
+  }
+}
